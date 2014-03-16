@@ -4,9 +4,9 @@
         var settings = $.extend({}, options);
         return this.each(function (index, obj) {
             $(this).html(function () {
-                return this.innerHTML.replace(new RegExp(Object.keys(settings).join("|"), "gi"), function (en) {
-                    en = en.replace(/(\"|\'|\(|\)|\[|\]|\.|\*|\!|\?|\$|\||\+|\^)/g, "\\$1");
-                    return settings[en];
+                return this.innerHTML.replace(new RegExp(Object.keys(settings).join("|"), "gi"), function (txt) {
+                    txt = txt.replace(/(\"|\'|\(|\)|\[|\]|\.|\*|\!|\?|\$|\||\+|\^)/g, "\\$1");
+                    return settings[txt];
                 });
             });
         });
