@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>jQuery plugin replace Text - devs.forumvi.com</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script type="text/javascript" src="./source/replacetext.js"></script>
+
+    <script type="text/javascript">
+        //<![CDATA[ 
+        $(function() {
+            $("p").replaceText({
+                "CSS": "<strong>CSS</strong>",
+                "Topic\\(s\\) being watched": "Chủ đề đang theo dõi",
+                "devs\\.cf": "devs.forumvi.com"
+            });
+        }); 
+        //]]>
+    </script>
+</head>
+
+<body>
+    <p>CSS</p>
+    <p>Chủ đề đang theo dõi</p>
+    <p>
+        <a href="http://devs.cf">http://devs.cf</a>
+    </p>
+    <!-- http://jsfiddle.net/baivong/49Zmw/ -->
+</body>
+
+</html>
