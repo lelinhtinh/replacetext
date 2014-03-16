@@ -1,4 +1,4 @@
-/* jQuery plugin replaceText v0.1 <http://devs.forumvi.com/>	Copyright (c) 2014+ zzbaivong */
+/* jQuery plugin replaceText v0.2 <http://devs.forumvi.com/>	Copyright (c) 2014+ zzbaivong */
 (function ($) {
 	$.fn.replaceText = function (options) {
 		var settings = $.extend({}, options);
