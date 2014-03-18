@@ -4,7 +4,7 @@
 		var settings = $.extend({}, options);
 		return this.each(function (index, obj) {
 			$(this).html(function () {
-				return this.innerHTML.replace(new RegExp(Object.keys(settings).toString().replace(/(\"|\'|\(|\)|\[|\]|\.|\*|\!|\?|\$|\||\+|\^)/g, "\\$1").replace(/,/g, "|"), "gi"), function (txt) {
+				return this.innerHTML.replace(new RegExp(Object.keys(settings).toString().replace(/(\"|\'|\(|\)|\[|\]|\.|\*|\!|\?|\$|\||\+|\^|\/)/g, "\\$1").replace(/,/g, "|"), "gi"), function (txt) {
 					return settings[txt];
 				});
 			});
