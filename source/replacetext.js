@@ -1,12 +1,15 @@
-/* jQuery plugin replaceText v0.2 <http://devs.forumvi.com/>	Copyright (c) 2014+ zzbaivong */
+/* jQuery plugin replaceText v0.3 <http://devs.forumvi.com/>	Copyright (c) 2014+ zzbaivong */
 (function ($) {
 	$.fn.replaceText = function (options) {
 		var settings = $.extend({}, options);
 		return this.each(function (index, obj) {
 			$(this).html(function () {
-				return this.innerHTML.replace(new RegExp(Object.keys(settings).toString().replace(/(\"|\'|\(|\)|\[|\]|\.|\*|\!|\?|\$|\||\+|\^|\/)/g, "\\$1").replace(/,/g, "|"), "gi"), function (txt) {
-					return settings[txt];
-				});
+				var content = this.innerHTML;
+				$.each(Object.keys(settings), function (index, val) {
+					var regex = new RegExp(val.replace(/(\"|\'|\(|\)|\[|\]|\.|\*|\!|\?|\$|\||\+|\^|\/|\,|\;)/g, "\\$1"), "gi");
+					content = content.replace(regex, settings[val]);
+				})
+				return content;
 			});
 		});
 	};
